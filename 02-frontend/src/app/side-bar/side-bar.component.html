@@ -1,0 +1,30 @@
+
+
+<aside class="menu-sidebar d-none d-lg-block">
+  <div class="logo">
+    <a href="#">
+      <img src="assets/images/logos/liveoutside-logo.png" alt="liveoutside" class="img-responsive">
+    </a>
+  </div>
+  <div class="menu-sidebar-content js-scrollbar1">
+    <nav class="navbar-sidebar">
+      <ul class="list-unstyled navbar-list">
+        <li *ngFor="let item of sidebarItems">
+          {{item.label}}
+          <button (click)="toggleDropdown(item)">Toggle</button>
+          <ul *ngIf="item.options && item.showDropdown">
+          <li *ngFor="let option of item.options">
+          <a routerLink="/subcategories/1" routerLinkActive="active-link">Mens</a>
+        </li>
+      </ul>
+        </li>
+        <li>
+          <a href="#">Gear / Equipment</a>
+        </li>
+        <li>
+          <a href="#">Food / Water</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
